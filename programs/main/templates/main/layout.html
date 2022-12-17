@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
+<body>
+   <aside>
+       <img src="{% static 'main/img/961_oooo.plus.png' %}" alt="Лого">
+       <span class="logo">programs</span>
+       <h3>Навигация</h3>
+       <ul>
+           <a href="{% url 'home' %}"><li><i class="bi bi-house-door"></i>Первая</li></a>
+           <a href="{% url 'about' %}"><li><i class="bi bi-bookmark-star"></i>Вторая</li></a>
+           <a href=""><li><i class="bi bi-binoculars"></i>Третья</li></a>
+       </ul>
+   </aside>
+   <main>
+       {% block content %}
+       {% endblock %}
+   </main>
+</body>
+</html>
