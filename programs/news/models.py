@@ -12,7 +12,7 @@ class Newshome(models.Model):
         return self.title
 
 
-    # class Meta:
-    #     verbose_name = 'Новость'
-    #     verbose_name_plural = 'Новости'
+    class Meta:
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
 # Create your models here.
