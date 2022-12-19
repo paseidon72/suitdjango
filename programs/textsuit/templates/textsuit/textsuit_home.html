@@ -5,7 +5,18 @@
 {% block content %}
     <div class="features">
         <h1>Новости</h1>
-        <p>Временный текст</p>
-        <button class="btn btn-warning">На первую страницу</button>
+        {% if news %}
+            {% for el in news %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.anons }}</p>
+                    <a href="{% url 'detail' el.id %}" class="btn btn-warning">Читать подробно</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет записей</p>
+        {% endif %}
+
+        {# Комментарий #}
     </div>
 {% endblock %}
