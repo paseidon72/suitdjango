@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Pablic
 from .forms import PablicForm
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 def textsuit_home(request):
@@ -14,6 +14,17 @@ class NewsDetailView(DetailView):
     template_name = 'textsuit/details_view.html'
     context_object_name = 'pablic'
 
+
+class NewsUpdateView(UpdateView):
+    model = Pablic
+    template_name = 'textsuit/create.html'
+    form_class = PablicForm
+
+
+class NewsDeleteView(DeleteView):
+    model = Pablic
+    success_url = '/textsuit/'
+    template_name = 'textsuit/delete.html'
 
 def create(request):
     error = ''

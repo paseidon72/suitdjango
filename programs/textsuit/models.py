@@ -12,6 +12,10 @@ class Pablic(models.Model):
         return self.title
 
 
+    def get_absolute_url(self):
+        return f'/textsuit/{self.id}'
+
+
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
